@@ -1,21 +1,19 @@
 function nombreResolucion(ancho, alto){
-    if (((7680 <= ancho) && (4320 <=  alto))){
+    if (ancho >= 7680 && alto >= 4320) {
+        return '8K';
+    }else if (ancho >= 3840 && alto >= 2160){ 
         return '4K';
-    }else if (((1280 < ancho < 1920) && (720 < alto < 1080))) {
-        return 'HD';
-    }else if ((1920 <= ancho < 2560) && (1080 <= alto < 1440)){
-        return 'FHD';
-    }else if ((2560 <= ancho < 3840) && (1440 <= alto < 2160)){
+    }else if (ancho >= 2560 && alto >= 1440){ 
         return 'WQHD';
-    }else if ((3840 <= ancho < 7680) && (2160 <= alto < 4320)){
-        return '4K';
-    }else if ((7680 <= ancho) && (4320 <=  alto)){
-        return '4K';
+    }else if (ancho >= 1920 && alto >= 1080){ 
+        return 'FHD';
+    }else if (ancho >= 1280 && alto >= 720){ 
+        return 'HD';
     }else {
-        return false;
+        return 'SIN TIPO DE DEFINICION';
     }
 }
 
-let nombre = nombreResolucion(1366, 50);
+let nombre = nombreResolucion(2800, 1500);
 
 console.log(nombre);
